@@ -14,8 +14,8 @@
     Creation Date:          23/04/2018
 .CHANGE CONTROL
     Name                    Version         Date                Change Detail
-	Hal Lange				1.0				16/04/2018			Initial creation of Install Script
-    Hal Lange	            1.01            23/04/2018          Allow for local install source
+    Hal Lange               1.0             16/04/2018          Initial creation of Install Script
+    Hal Lange            1.01            23/04/2018          Allow for local install source
     Adam Yarborough         1.02            18/06/2018          Format and Integrate, update versions
 .EXAMPLE
     None Required
@@ -38,7 +38,7 @@ $NSSMVersion = "https://nssm.cc/release/nssm-2.24.zip"
 #$NSSMVersion = "C:\NSSM.zip" 
 #Source location for EUCMonitoring Script Location
 #$ScriptsVersion = "C:\EUC_Monitoring.zip"
-# $ScriptsVersion = "C:\Users\ayarborough\Desktop\EUC_Monitoring.zip"
+
 # Grab the dashboard stuff from the folder of script invocation
 $DashboardConfig = "$(split-path $SCRIPT:MyInvocation.MyCommand.Path -parent)\DashboardConfig"
 
