@@ -38,10 +38,10 @@ $NSSMVersion = "https://nssm.cc/release/nssm-2.24.zip"
 #$NSSMVersion = "C:\NSSM.zip" 
 #Source location for EUCMonitoring Script Location
 #$ScriptsVersion = "C:\EUC_Monitoring.zip"
-
+$EUCVersion = "https://github.com/littletoyrobots/EUCMonitoring/archive/v2_TestEngine.zip"
 # Grab the dashboard stuff from the folder of script invocation
 $DashboardConfig = "$(split-path $SCRIPT:MyInvocation.MyCommand.Path -parent)\DashboardConfig"
-
+$RebuildScript = "$(split-path $SCRIPT:MyInvocation.MyCommand.Path -parent)\Rebuild.ps1"
 
 
 
@@ -151,16 +151,16 @@ start-service "Grafana Server"
 write-host "Setting up Grafana"
 SetupGrafana
 
-if ( -Not (Get-Module -ListAvailable -Name EUCMonitoring) ) {
-    Install-Module EUCMonitoring
-}
-Import-Module EUCMonitoring
+GetAndInstall "EUCMonitoring" $EUCVersion $InstallDir
 
 Set-Location $InstallDir
 Set-EUCMonitoring $InstallDir -Verbose
 
 # Launch Notepad and let them edit the file.  
 # Later, when working, invoke New-EUCMonitoringConfig $InstallDir
+Copy-Item -Path $RebuildScript -Destination $InstallDir
 Copy-Item -Path $InstallDir\euc-monitoring.json.template -Destination $InstallDir\euc-monitoring.json
+
 & "C:\Windows\System32\notepad.exe" $InstallDir\euc-monitoring.json
 
+Write-Host "After configuring, run $RebuildScript" 
