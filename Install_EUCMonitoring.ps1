@@ -125,6 +125,7 @@ $content = [System.IO.File]::ReadAllText("$Influx\influxdb.conf").Replace("/var/
 # GetAndInstall "EUCMonitor" $ScriptsVersion $InstallDir
 # $ScriptsConfig = (get-childitem $installDir | Where-Object {$_.Name -match 'EUCMon'}).FullName
 # Copy-Item -Path $DashboardConfig -Destination $InstallDir -Recurse
+GetAndInstall "EUCMonitoring" $EUCVersion $InstallDir
 
 #Install NSSM
 GetAndInstall "NSSM" $NSSMVersion $InstallDir
@@ -159,8 +160,9 @@ Set-EUCMonitoring $InstallDir -Verbose
 # Launch Notepad and let them edit the file.  
 # Later, when working, invoke New-EUCMonitoringConfig $InstallDir
 Copy-Item -Path $RebuildScript -Destination $InstallDir
-Copy-Item -Path $InstallDir\euc-monitoring.json.template -Destination $InstallDir\euc-monitoring.json
+Copy-Item -Path $InstallDir\EUCMonitoring\Package\euc-monitoring.json.template -Destination $InstallDir\euc-monitoring.json
+Copy-Item -Path $InstallDir\EUCMonitoring\Package\euc-monitoring.css -Destination $InstallDir\euc-monitoring.css
 
 & "C:\Windows\System32\notepad.exe" $InstallDir\euc-monitoring.json
 
-Write-Host "After configuring, run $RebuildScript" 
+Write-Host "After configuring, run $RebuildScript under appropriate privs" 
