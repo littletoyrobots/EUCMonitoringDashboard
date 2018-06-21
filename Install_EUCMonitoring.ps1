@@ -51,8 +51,8 @@ write-host "Opening Firewall Rules for Grafana and InfluxDB"
 #$dumpVariable = New-NetFirewallRule -DisplayName "Grafana Server" -Direction Inbound -LocalPort 3000 -Protocol TCP -Action Allow -Description "Allow Grafana Server"
 #$dumpVariable = New-NetFirewallRule -DisplayName "InfluxDB Server" -Direction Inbound -LocalPort 8086 -Protocol TCP -Action Allow -Description "Allow InfluxDB Server" -AsJob
 
-New-NetFirewallRule -DisplayName "Grafana Server" -Direction Inbound -LocalPort 3000 -Protocol TCP -Action Allow -Description "Allow Grafana Server"
-New-NetFirewallRule -DisplayName "InfluxDB Server" -Direction Inbound -LocalPort 8086 -Protocol TCP -Action Allow -Description "Allow InfluxDB Server" -AsJob
+$Catch = New-NetFirewallRule -DisplayName "Grafana Server" -Direction Inbound -LocalPort 3000 -Protocol TCP -Action Allow -Description "Allow Grafana Server"
+$Catch = New-NetFirewallRule -DisplayName "InfluxDB Server" -Direction Inbound -LocalPort 8086 -Protocol TCP -Action Allow -Description "Allow InfluxDB Server" -AsJob
 
 
 
@@ -60,7 +60,7 @@ function GetAndInstall ( $Product, $DownloadFile, $Dest ) {
     $zipFile = "$DownloadLocation\$Product.zip"
     Write-Host "Downloading $Product to $zipfile"
     if ( ($DownloadFile -match "http://") -or ($DownloadFile -match "https://") ) { 
-        Invoke-WebRequest $DownloadFile -outFile $zipFile
+        $Catch = Invoke-WebRequest $DownloadFile -outFile $zipFile
     }
     else { $ZipFile = $DownloadFile }
 	
@@ -157,12 +157,17 @@ GetAndInstall "EUCMonitoring" $EUCVersion $InstallDir
 Set-Location $InstallDir
 Set-EUCMonitoring $InstallDir -Verbose
 
+# Purely to pass variable checks
+$Catch = ""
+Write-Verbose $Catch
+
 # Launch Notepad and let them edit the file.  
 # Later, when working, invoke New-EUCMonitoringConfig $InstallDir
 Copy-Item -Path $RebuildScript -Destination $InstallDir
-Copy-Item -Path $InstallDir\EUCMonitoring\Package\euc-monitoring.json.template -Destination $InstallDir\euc-monitoring.json
+Copy-Item -Path $InstallDir\EUCMonitoring\Package\euc-monitoring.json.template -Destination $InstallDir\euc-monitoring.json.template
 Copy-Item -Path $InstallDir\EUCMonitoring\Package\euc-monitoring.css -Destination $InstallDir\euc-monitoring.css
 
-& "C:\Windows\System32\notepad.exe" $InstallDir\euc-monitoring.json
+Write-Host "Copy your euc-monitoring.json file to $InstallDir and review configurations"
+#& "C:\Windows\System32\notepad.exe" $InstallDir\euc-monitoring.json
 
 Write-Host "After configuring, run $RebuildScript under appropriate privs" 
