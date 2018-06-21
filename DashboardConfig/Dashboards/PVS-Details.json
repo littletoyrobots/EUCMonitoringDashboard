@@ -61,7 +61,7 @@
       "format": "none",
       "gridPos": {
         "h": 3,
-        "w": 13,
+        "w": 22,
         "x": 0,
         "y": 0
       },
@@ -75,6 +75,7 @@
       "radius": "45px",
       "targets": [
         {
+          "alias": "[[tag_Server]]",
           "groupBy": [
             {
               "params": [
@@ -84,12 +85,18 @@
             },
             {
               "params": [
-                "null"
+                "Server"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "previous"
               ],
               "type": "fill"
             }
           ],
-          "measurement": "AD",
+          "measurement": "Provisioning",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -122,6 +129,7 @@
         }
       ],
       "title": "Overall State",
+      "transparent": true,
       "type": "btplc-status-dot-panel"
     },
     {
@@ -144,7 +152,7 @@
       },
       "gridPos": {
         "h": 2,
-        "w": 5,
+        "w": 4,
         "x": 0,
         "y": 3
       },
@@ -209,7 +217,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "AD",
+          "measurement": "Provisioning",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -218,7 +226,7 @@
             [
               {
                 "params": [
-                  "Port389"
+                  "Port54321"
                 ],
                 "type": "field"
               },
@@ -232,7 +240,7 @@
         }
       ],
       "thresholds": ".01,1",
-      "title": "Port 389",
+      "title": "Port 54321",
       "type": "singlestat",
       "valueFontSize": "80%",
       "valueMaps": [
@@ -251,8 +259,8 @@
       "format": "none",
       "gridPos": {
         "h": 2,
-        "w": 8,
-        "x": 5,
+        "w": 7,
+        "x": 4,
         "y": 3
       },
       "id": 6,
@@ -286,7 +294,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "AD",
+          "measurement": "Provisioning",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -295,19 +303,13 @@
             [
               {
                 "params": [
-                  "Port389"
+                  "Port54321"
                 ],
                 "type": "field"
               },
               {
                 "params": [],
                 "type": "last"
-              },
-              {
-                "params": [
-                  "Port 389"
-                ],
-                "type": "alias"
               }
             ]
           ],
@@ -320,7 +322,7 @@
           "value": "1"
         }
       ],
-      "title": "Port 389",
+      "title": "Port 54321",
       "type": "btplc-status-dot-panel"
     },
     {
@@ -343,7 +345,7 @@
       },
       "gridPos": {
         "h": 2,
-        "w": 5,
+        "w": 4,
         "x": 0,
         "y": 5
       },
@@ -408,7 +410,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "AD",
+          "measurement": "Provisioning",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -417,13 +419,13 @@
             [
               {
                 "params": [
-                  "Port636"
+                  "BNPXE"
                 ],
                 "type": "field"
               },
               {
                 "params": [],
-                "type": "mean"
+                "type": "last"
               }
             ]
           ],
@@ -431,7 +433,7 @@
         }
       ],
       "thresholds": ".01,1",
-      "title": "Port 636",
+      "title": "BNXPE",
       "type": "singlestat",
       "valueFontSize": "80%",
       "valueMaps": [
@@ -450,8 +452,8 @@
       "format": "none",
       "gridPos": {
         "h": 2,
-        "w": 8,
-        "x": 5,
+        "w": 7,
+        "x": 4,
         "y": 5
       },
       "id": 9,
@@ -485,7 +487,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "AD",
+          "measurement": "Provisioning",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -494,7 +496,7 @@
             [
               {
                 "params": [
-                  "Port636"
+                  "BNPXE"
                 ],
                 "type": "field"
               },
@@ -513,7 +515,7 @@
           "value": "1"
         }
       ],
-      "title": "Port 636",
+      "title": "BNPXE",
       "type": "btplc-status-dot-panel"
     },
     {
@@ -536,7 +538,7 @@
       },
       "gridPos": {
         "h": 2,
-        "w": 5,
+        "w": 4,
         "x": 0,
         "y": 7
       },
@@ -601,7 +603,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "AD",
+          "measurement": "Provisioning",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -610,7 +612,7 @@
             [
               {
                 "params": [
-                  "ADWS"
+                  "BNTFTP"
                 ],
                 "type": "field"
               },
@@ -624,7 +626,7 @@
         }
       ],
       "thresholds": ".01,1",
-      "title": "ADWS",
+      "title": "BNTFTP",
       "type": "singlestat",
       "valueFontSize": "80%",
       "valueMaps": [
@@ -643,8 +645,8 @@
       "format": "none",
       "gridPos": {
         "h": 2,
-        "w": 8,
-        "x": 5,
+        "w": 7,
+        "x": 4,
         "y": 7
       },
       "id": 11,
@@ -678,7 +680,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "AD",
+          "measurement": "Provisioning",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -687,7 +689,7 @@
             [
               {
                 "params": [
-                  "ADWS"
+                  "BNTFTP"
                 ],
                 "type": "field"
               },
@@ -706,7 +708,7 @@
           "value": "1"
         }
       ],
-      "title": "ADWS",
+      "title": "BNTFTP",
       "type": "btplc-status-dot-panel"
     },
     {
@@ -729,7 +731,7 @@
       },
       "gridPos": {
         "h": 2,
-        "w": 5,
+        "w": 4,
         "x": 0,
         "y": 9
       },
@@ -794,7 +796,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "AD",
+          "measurement": "Provisioning",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -803,7 +805,7 @@
             [
               {
                 "params": [
-                  "NTDS"
+                  "PVSTSB"
                 ],
                 "type": "field"
               },
@@ -817,7 +819,7 @@
         }
       ],
       "thresholds": ".01,1",
-      "title": "NTDS",
+      "title": "PVSTSB",
       "type": "singlestat",
       "valueFontSize": "80%",
       "valueMaps": [
@@ -836,8 +838,8 @@
       "format": "none",
       "gridPos": {
         "h": 2,
-        "w": 8,
-        "x": 5,
+        "w": 7,
+        "x": 4,
         "y": 9
       },
       "id": 13,
@@ -871,7 +873,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "AD",
+          "measurement": "Provisioning",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -880,7 +882,7 @@
             [
               {
                 "params": [
-                  "NTDS"
+                  "PVSTSB"
                 ],
                 "type": "field"
               },
@@ -899,7 +901,7 @@
           "value": "1"
         }
       ],
-      "title": "NTDS",
+      "title": "PVSTSB",
       "type": "btplc-status-dot-panel"
     },
     {
@@ -922,7 +924,7 @@
       },
       "gridPos": {
         "h": 2,
-        "w": 5,
+        "w": 4,
         "x": 0,
         "y": 11
       },
@@ -987,7 +989,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "AD",
+          "measurement": "Provisioning",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -996,7 +998,7 @@
             [
               {
                 "params": [
-                  "ValidCert"
+                  "PvsApi"
                 ],
                 "type": "field"
               },
@@ -1010,7 +1012,7 @@
         }
       ],
       "thresholds": ".01,1",
-      "title": "Valid Cert",
+      "title": "PvsApi",
       "type": "singlestat",
       "valueFontSize": "80%",
       "valueMaps": [
@@ -1029,8 +1031,8 @@
       "format": "none",
       "gridPos": {
         "h": 2,
-        "w": 8,
-        "x": 5,
+        "w": 7,
+        "x": 4,
         "y": 11
       },
       "id": 15,
@@ -1064,7 +1066,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "AD",
+          "measurement": "Provisioning",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -1073,7 +1075,7 @@
             [
               {
                 "params": [
-                  "ValidCert"
+                  "PvsApi"
                 ],
                 "type": "field"
               },
@@ -1092,7 +1094,393 @@
           "value": "1"
         }
       ],
-      "title": "Valid Cert",
+      "title": "PvsApi",
+      "type": "btplc-status-dot-panel"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": true,
+      "colors": [
+        "#e24d42",
+        "#e5ac0e",
+        "#508642"
+      ],
+      "datasource": "${DS_EUCMONITORING}",
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 4,
+        "x": 0,
+        "y": 13
+      },
+      "id": 18,
+      "interval": null,
+      "links": [],
+      "mappingType": 2,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "0",
+          "text": "DOWN",
+          "to": "0.01"
+        },
+        {
+          "from": "0.02",
+          "text": "DEGRADED",
+          "to": "0.99"
+        },
+        {
+          "from": "1",
+          "text": "UP",
+          "to": "1.2"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "previous"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "Provisioning",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "StreamService"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": []
+        }
+      ],
+      "thresholds": ".01,1",
+      "title": "Stream Service",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "0.01",
+          "value": "0"
+        }
+      ],
+      "valueName": "avg"
+    },
+    {
+      "datasource": "${DS_EUCMONITORING}",
+      "decimals": 2,
+      "defaultColor": "#e24d42",
+      "format": "none",
+      "gridPos": {
+        "h": 2,
+        "w": 7,
+        "x": 4,
+        "y": 13
+      },
+      "id": 19,
+      "linkIndex": "0",
+      "linkVars": [],
+      "links": [],
+      "mathColorValue": "data[end]",
+      "mathDisplayValue": "data[end]",
+      "mathScratchPad": "data = size(data)[1] == 0 ? [NaN] : data",
+      "radius": "20px",
+      "targets": [
+        {
+          "alias": "[[tag_Server]]",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "Server"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "previous"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "Provisioning",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "StreamService"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              }
+            ]
+          ],
+          "tags": []
+        }
+      ],
+      "thresholds": [
+        {
+          "color": "#508642",
+          "value": "1"
+        }
+      ],
+      "title": "Stream Service",
+      "type": "btplc-status-dot-panel"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": true,
+      "colors": [
+        "#e24d42",
+        "#e5ac0e",
+        "#508642"
+      ],
+      "datasource": "${DS_EUCMONITORING}",
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 4,
+        "x": 0,
+        "y": 15
+      },
+      "id": 20,
+      "interval": null,
+      "links": [],
+      "mappingType": 2,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "0",
+          "text": "DOWN",
+          "to": "0.01"
+        },
+        {
+          "from": "0.02",
+          "text": "DEGRADED",
+          "to": "0.99"
+        },
+        {
+          "from": "1",
+          "text": "UP",
+          "to": "1.2"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "previous"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "Provisioning",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "soapserver"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": []
+        }
+      ],
+      "thresholds": ".01,1",
+      "title": "Soap Server",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "0.01",
+          "value": "0"
+        }
+      ],
+      "valueName": "avg"
+    },
+    {
+      "datasource": "${DS_EUCMONITORING}",
+      "decimals": 2,
+      "defaultColor": "#e24d42",
+      "format": "none",
+      "gridPos": {
+        "h": 2,
+        "w": 7,
+        "x": 4,
+        "y": 15
+      },
+      "id": 21,
+      "linkIndex": "0",
+      "linkVars": [],
+      "links": [],
+      "mathColorValue": "data[end]",
+      "mathDisplayValue": "data[end]",
+      "mathScratchPad": "data = size(data)[1] == 0 ? [NaN] : data",
+      "radius": "20px",
+      "targets": [
+        {
+          "alias": "[[tag_Server]]",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "Server"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "previous"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "Provisioning",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "soapserver"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              }
+            ]
+          ],
+          "tags": []
+        }
+      ],
+      "thresholds": [
+        {
+          "color": "#508642",
+          "value": "1"
+        }
+      ],
+      "title": "Soap Server",
       "type": "btplc-status-dot-panel"
     }
   ],
@@ -1132,7 +1520,7 @@
     ]
   },
   "timezone": "",
-  "title": "Active Directory Details",
-  "uid": "zJtdqaHmk",
+  "title": "Provisioning Details",
+  "uid": "79VbSfHiz",
   "version": 2
 }

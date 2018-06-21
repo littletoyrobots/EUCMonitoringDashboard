@@ -61,7 +61,7 @@
       "format": "none",
       "gridPos": {
         "h": 3,
-        "w": 13,
+        "w": 22,
         "x": 0,
         "y": 0
       },
@@ -75,6 +75,7 @@
       "radius": "45px",
       "targets": [
         {
+          "alias": "[[tag_Server]]",
           "groupBy": [
             {
               "params": [
@@ -84,12 +85,18 @@
             },
             {
               "params": [
-                "null"
+                "Server"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "previous"
               ],
               "type": "fill"
             }
           ],
-          "measurement": "AD",
+          "measurement": "XdLicensing",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -122,6 +129,7 @@
         }
       ],
       "title": "Overall State",
+      "transparent": true,
       "type": "btplc-status-dot-panel"
     },
     {
@@ -144,7 +152,7 @@
       },
       "gridPos": {
         "h": 2,
-        "w": 5,
+        "w": 4,
         "x": 0,
         "y": 3
       },
@@ -209,7 +217,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "AD",
+          "measurement": "XdLicensing",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -218,7 +226,7 @@
             [
               {
                 "params": [
-                  "Port389"
+                  "Port27000"
                 ],
                 "type": "field"
               },
@@ -232,7 +240,7 @@
         }
       ],
       "thresholds": ".01,1",
-      "title": "Port 389",
+      "title": "Port 27000",
       "type": "singlestat",
       "valueFontSize": "80%",
       "valueMaps": [
@@ -251,8 +259,8 @@
       "format": "none",
       "gridPos": {
         "h": 2,
-        "w": 8,
-        "x": 5,
+        "w": 7,
+        "x": 4,
         "y": 3
       },
       "id": 6,
@@ -265,7 +273,7 @@
       "radius": "20px",
       "targets": [
         {
-          "alias": "[[tag_Server]] [[col]]",
+          "alias": "[[tag_Server]]",
           "groupBy": [
             {
               "params": [
@@ -286,7 +294,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "AD",
+          "measurement": "XdLicensing",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -295,19 +303,13 @@
             [
               {
                 "params": [
-                  "Port389"
+                  "Port27000"
                 ],
                 "type": "field"
               },
               {
                 "params": [],
                 "type": "last"
-              },
-              {
-                "params": [
-                  "Port 389"
-                ],
-                "type": "alias"
               }
             ]
           ],
@@ -320,7 +322,7 @@
           "value": "1"
         }
       ],
-      "title": "Port 389",
+      "title": "Port 27000",
       "type": "btplc-status-dot-panel"
     },
     {
@@ -343,7 +345,7 @@
       },
       "gridPos": {
         "h": 2,
-        "w": 5,
+        "w": 4,
         "x": 0,
         "y": 5
       },
@@ -408,7 +410,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "AD",
+          "measurement": "XdLicensing",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -417,13 +419,13 @@
             [
               {
                 "params": [
-                  "Port636"
+                  "Port7279"
                 ],
                 "type": "field"
               },
               {
                 "params": [],
-                "type": "mean"
+                "type": "last"
               }
             ]
           ],
@@ -431,7 +433,7 @@
         }
       ],
       "thresholds": ".01,1",
-      "title": "Port 636",
+      "title": "Port 7279",
       "type": "singlestat",
       "valueFontSize": "80%",
       "valueMaps": [
@@ -450,8 +452,8 @@
       "format": "none",
       "gridPos": {
         "h": 2,
-        "w": 8,
-        "x": 5,
+        "w": 7,
+        "x": 4,
         "y": 5
       },
       "id": 9,
@@ -485,7 +487,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "AD",
+          "measurement": "XdLicensing",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -494,7 +496,7 @@
             [
               {
                 "params": [
-                  "Port636"
+                  "Port7279"
                 ],
                 "type": "field"
               },
@@ -513,7 +515,7 @@
           "value": "1"
         }
       ],
-      "title": "Port 636",
+      "title": "Port 7279",
       "type": "btplc-status-dot-panel"
     },
     {
@@ -536,7 +538,7 @@
       },
       "gridPos": {
         "h": 2,
-        "w": 5,
+        "w": 4,
         "x": 0,
         "y": 7
       },
@@ -601,7 +603,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "AD",
+          "measurement": "XdLicensing",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -610,7 +612,7 @@
             [
               {
                 "params": [
-                  "ADWS"
+                  "Port8082"
                 ],
                 "type": "field"
               },
@@ -624,7 +626,7 @@
         }
       ],
       "thresholds": ".01,1",
-      "title": "ADWS",
+      "title": "Port 8082",
       "type": "singlestat",
       "valueFontSize": "80%",
       "valueMaps": [
@@ -643,8 +645,8 @@
       "format": "none",
       "gridPos": {
         "h": 2,
-        "w": 8,
-        "x": 5,
+        "w": 7,
+        "x": 4,
         "y": 7
       },
       "id": 11,
@@ -678,7 +680,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "AD",
+          "measurement": "XdLicensing",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -687,7 +689,7 @@
             [
               {
                 "params": [
-                  "ADWS"
+                  "Port8082"
                 ],
                 "type": "field"
               },
@@ -706,7 +708,7 @@
           "value": "1"
         }
       ],
-      "title": "ADWS",
+      "title": "Port 8082",
       "type": "btplc-status-dot-panel"
     },
     {
@@ -729,7 +731,7 @@
       },
       "gridPos": {
         "h": 2,
-        "w": 5,
+        "w": 4,
         "x": 0,
         "y": 9
       },
@@ -794,7 +796,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "AD",
+          "measurement": "XdLicensing",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -803,7 +805,7 @@
             [
               {
                 "params": [
-                  "NTDS"
+                  "Port8083"
                 ],
                 "type": "field"
               },
@@ -817,7 +819,7 @@
         }
       ],
       "thresholds": ".01,1",
-      "title": "NTDS",
+      "title": "Port 8083",
       "type": "singlestat",
       "valueFontSize": "80%",
       "valueMaps": [
@@ -836,8 +838,8 @@
       "format": "none",
       "gridPos": {
         "h": 2,
-        "w": 8,
-        "x": 5,
+        "w": 7,
+        "x": 4,
         "y": 9
       },
       "id": 13,
@@ -871,7 +873,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "AD",
+          "measurement": "XdLicensing",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -880,7 +882,7 @@
             [
               {
                 "params": [
-                  "NTDS"
+                  "Port8083"
                 ],
                 "type": "field"
               },
@@ -899,7 +901,7 @@
           "value": "1"
         }
       ],
-      "title": "NTDS",
+      "title": "Port 8083",
       "type": "btplc-status-dot-panel"
     },
     {
@@ -922,11 +924,11 @@
       },
       "gridPos": {
         "h": 2,
-        "w": 5,
+        "w": 4,
         "x": 0,
         "y": 11
       },
-      "id": 14,
+      "id": 25,
       "interval": null,
       "links": [],
       "mappingType": 2,
@@ -987,7 +989,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "AD",
+          "measurement": "XdLicensing",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -996,7 +998,7 @@
             [
               {
                 "params": [
-                  "ValidCert"
+                  "XdLicense"
                 ],
                 "type": "field"
               },
@@ -1010,7 +1012,7 @@
         }
       ],
       "thresholds": ".01,1",
-      "title": "Valid Cert",
+      "title": "XdLicense Check",
       "type": "singlestat",
       "valueFontSize": "80%",
       "valueMaps": [
@@ -1029,11 +1031,11 @@
       "format": "none",
       "gridPos": {
         "h": 2,
-        "w": 8,
-        "x": 5,
+        "w": 7,
+        "x": 4,
         "y": 11
       },
-      "id": 15,
+      "id": 26,
       "linkIndex": "0",
       "linkVars": [],
       "links": [],
@@ -1064,7 +1066,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "AD",
+          "measurement": "XdLicensing",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -1073,7 +1075,7 @@
             [
               {
                 "params": [
-                  "ValidCert"
+                  "XdLicense"
                 ],
                 "type": "field"
               },
@@ -1092,7 +1094,7 @@
           "value": "1"
         }
       ],
-      "title": "Valid Cert",
+      "title": "XdLicense Check",
       "type": "btplc-status-dot-panel"
     }
   ],
@@ -1132,7 +1134,7 @@
     ]
   },
   "timezone": "",
-  "title": "Active Directory Details",
-  "uid": "zJtdqaHmk",
+  "title": "XD Licensing Details",
+  "uid": "cYgApfNiz",
   "version": 2
 }

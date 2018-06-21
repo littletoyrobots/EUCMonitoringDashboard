@@ -61,7 +61,7 @@
       "format": "none",
       "gridPos": {
         "h": 3,
-        "w": 13,
+        "w": 22,
         "x": 0,
         "y": 0
       },
@@ -75,6 +75,7 @@
       "radius": "45px",
       "targets": [
         {
+          "alias": "[[tag_Server]]",
           "groupBy": [
             {
               "params": [
@@ -84,12 +85,18 @@
             },
             {
               "params": [
-                "null"
+                "Server"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "previous"
               ],
               "type": "fill"
             }
           ],
-          "measurement": "AD",
+          "measurement": "UPS",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -122,6 +129,7 @@
         }
       ],
       "title": "Overall State",
+      "transparent": true,
       "type": "btplc-status-dot-panel"
     },
     {
@@ -144,7 +152,7 @@
       },
       "gridPos": {
         "h": 2,
-        "w": 5,
+        "w": 4,
         "x": 0,
         "y": 3
       },
@@ -209,7 +217,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "AD",
+          "measurement": "UPS",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -218,7 +226,7 @@
             [
               {
                 "params": [
-                  "Port389"
+                  "Port7229"
                 ],
                 "type": "field"
               },
@@ -232,7 +240,7 @@
         }
       ],
       "thresholds": ".01,1",
-      "title": "Port 389",
+      "title": "Port 7229",
       "type": "singlestat",
       "valueFontSize": "80%",
       "valueMaps": [
@@ -251,8 +259,8 @@
       "format": "none",
       "gridPos": {
         "h": 2,
-        "w": 8,
-        "x": 5,
+        "w": 7,
+        "x": 4,
         "y": 3
       },
       "id": 6,
@@ -265,7 +273,7 @@
       "radius": "20px",
       "targets": [
         {
-          "alias": "[[tag_Server]] [[col]]",
+          "alias": "[[tag_Server]]",
           "groupBy": [
             {
               "params": [
@@ -286,7 +294,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "AD",
+          "measurement": "UPS",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -295,19 +303,13 @@
             [
               {
                 "params": [
-                  "Port389"
+                  "Port7229"
                 ],
                 "type": "field"
               },
               {
                 "params": [],
                 "type": "last"
-              },
-              {
-                "params": [
-                  "Port 389"
-                ],
-                "type": "alias"
               }
             ]
           ],
@@ -320,7 +322,7 @@
           "value": "1"
         }
       ],
-      "title": "Port 389",
+      "title": "Port 7229",
       "type": "btplc-status-dot-panel"
     },
     {
@@ -343,7 +345,7 @@
       },
       "gridPos": {
         "h": 2,
-        "w": 5,
+        "w": 4,
         "x": 0,
         "y": 5
       },
@@ -408,7 +410,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "AD",
+          "measurement": "UPS",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -417,13 +419,13 @@
             [
               {
                 "params": [
-                  "Port636"
+                  "CitrixXTEServer"
                 ],
                 "type": "field"
               },
               {
                 "params": [],
-                "type": "mean"
+                "type": "last"
               }
             ]
           ],
@@ -431,7 +433,7 @@
         }
       ],
       "thresholds": ".01,1",
-      "title": "Port 636",
+      "title": "Citrix XTE Server",
       "type": "singlestat",
       "valueFontSize": "80%",
       "valueMaps": [
@@ -450,8 +452,8 @@
       "format": "none",
       "gridPos": {
         "h": 2,
-        "w": 8,
-        "x": 5,
+        "w": 7,
+        "x": 4,
         "y": 5
       },
       "id": 9,
@@ -485,7 +487,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "AD",
+          "measurement": "UPS",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -494,7 +496,7 @@
             [
               {
                 "params": [
-                  "Port636"
+                  "CitrixXTEServer"
                 ],
                 "type": "field"
               },
@@ -513,7 +515,7 @@
           "value": "1"
         }
       ],
-      "title": "Port 636",
+      "title": "Citrix XTE Server",
       "type": "btplc-status-dot-panel"
     },
     {
@@ -536,7 +538,7 @@
       },
       "gridPos": {
         "h": 2,
-        "w": 5,
+        "w": 4,
         "x": 0,
         "y": 7
       },
@@ -601,7 +603,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "AD",
+          "measurement": "UPS",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -610,7 +612,7 @@
             [
               {
                 "params": [
-                  "ADWS"
+                  "UpSvc"
                 ],
                 "type": "field"
               },
@@ -624,7 +626,7 @@
         }
       ],
       "thresholds": ".01,1",
-      "title": "ADWS",
+      "title": "UpSvc",
       "type": "singlestat",
       "valueFontSize": "80%",
       "valueMaps": [
@@ -643,8 +645,8 @@
       "format": "none",
       "gridPos": {
         "h": 2,
-        "w": 8,
-        "x": 5,
+        "w": 7,
+        "x": 4,
         "y": 7
       },
       "id": 11,
@@ -678,7 +680,7 @@
               "type": "fill"
             }
           ],
-          "measurement": "AD",
+          "measurement": "UPS",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
@@ -687,7 +689,7 @@
             [
               {
                 "params": [
-                  "ADWS"
+                  "UpSvc"
                 ],
                 "type": "field"
               },
@@ -706,393 +708,7 @@
           "value": "1"
         }
       ],
-      "title": "ADWS",
-      "type": "btplc-status-dot-panel"
-    },
-    {
-      "cacheTimeout": null,
-      "colorBackground": false,
-      "colorValue": true,
-      "colors": [
-        "#e24d42",
-        "#e5ac0e",
-        "#508642"
-      ],
-      "datasource": "${DS_EUCMONITORING}",
-      "format": "none",
-      "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
-      "gridPos": {
-        "h": 2,
-        "w": 5,
-        "x": 0,
-        "y": 9
-      },
-      "id": 12,
-      "interval": null,
-      "links": [],
-      "mappingType": 2,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "postfix": "",
-      "postfixFontSize": "50%",
-      "prefix": "",
-      "prefixFontSize": "50%",
-      "rangeMaps": [
-        {
-          "from": "0",
-          "text": "DOWN",
-          "to": "0.01"
-        },
-        {
-          "from": "0.02",
-          "text": "DEGRADED",
-          "to": "0.99"
-        },
-        {
-          "from": "1",
-          "text": "UP",
-          "to": "1.2"
-        }
-      ],
-      "sparkline": {
-        "fillColor": "rgba(31, 118, 189, 0.18)",
-        "full": false,
-        "lineColor": "rgb(31, 120, 193)",
-        "show": false
-      },
-      "tableColumn": "",
-      "targets": [
-        {
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "previous"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "AD",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "NTDS"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              }
-            ]
-          ],
-          "tags": []
-        }
-      ],
-      "thresholds": ".01,1",
-      "title": "NTDS",
-      "type": "singlestat",
-      "valueFontSize": "80%",
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "0.01",
-          "value": "0"
-        }
-      ],
-      "valueName": "avg"
-    },
-    {
-      "datasource": "${DS_EUCMONITORING}",
-      "decimals": 2,
-      "defaultColor": "#e24d42",
-      "format": "none",
-      "gridPos": {
-        "h": 2,
-        "w": 8,
-        "x": 5,
-        "y": 9
-      },
-      "id": 13,
-      "linkIndex": "0",
-      "linkVars": [],
-      "links": [],
-      "mathColorValue": "data[end]",
-      "mathDisplayValue": "data[end]",
-      "mathScratchPad": "data = size(data)[1] == 0 ? [NaN] : data",
-      "radius": "20px",
-      "targets": [
-        {
-          "alias": "[[tag_Server]]",
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "Server"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "previous"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "AD",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "NTDS"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              }
-            ]
-          ],
-          "tags": []
-        }
-      ],
-      "thresholds": [
-        {
-          "color": "#508642",
-          "value": "1"
-        }
-      ],
-      "title": "NTDS",
-      "type": "btplc-status-dot-panel"
-    },
-    {
-      "cacheTimeout": null,
-      "colorBackground": false,
-      "colorValue": true,
-      "colors": [
-        "#e24d42",
-        "#e5ac0e",
-        "#508642"
-      ],
-      "datasource": "${DS_EUCMONITORING}",
-      "format": "none",
-      "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
-      "gridPos": {
-        "h": 2,
-        "w": 5,
-        "x": 0,
-        "y": 11
-      },
-      "id": 14,
-      "interval": null,
-      "links": [],
-      "mappingType": 2,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "postfix": "",
-      "postfixFontSize": "50%",
-      "prefix": "",
-      "prefixFontSize": "50%",
-      "rangeMaps": [
-        {
-          "from": "0",
-          "text": "DOWN",
-          "to": "0.01"
-        },
-        {
-          "from": "0.02",
-          "text": "DEGRADED",
-          "to": "0.99"
-        },
-        {
-          "from": "1",
-          "text": "UP",
-          "to": "1.2"
-        }
-      ],
-      "sparkline": {
-        "fillColor": "rgba(31, 118, 189, 0.18)",
-        "full": false,
-        "lineColor": "rgb(31, 120, 193)",
-        "show": false
-      },
-      "tableColumn": "",
-      "targets": [
-        {
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "previous"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "AD",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "ValidCert"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              }
-            ]
-          ],
-          "tags": []
-        }
-      ],
-      "thresholds": ".01,1",
-      "title": "Valid Cert",
-      "type": "singlestat",
-      "valueFontSize": "80%",
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "0.01",
-          "value": "0"
-        }
-      ],
-      "valueName": "avg"
-    },
-    {
-      "datasource": "${DS_EUCMONITORING}",
-      "decimals": 2,
-      "defaultColor": "#e24d42",
-      "format": "none",
-      "gridPos": {
-        "h": 2,
-        "w": 8,
-        "x": 5,
-        "y": 11
-      },
-      "id": 15,
-      "linkIndex": "0",
-      "linkVars": [],
-      "links": [],
-      "mathColorValue": "data[end]",
-      "mathDisplayValue": "data[end]",
-      "mathScratchPad": "data = size(data)[1] == 0 ? [NaN] : data",
-      "radius": "20px",
-      "targets": [
-        {
-          "alias": "[[tag_Server]]",
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "Server"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "previous"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "AD",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "ValidCert"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              }
-            ]
-          ],
-          "tags": []
-        }
-      ],
-      "thresholds": [
-        {
-          "color": "#508642",
-          "value": "1"
-        }
-      ],
-      "title": "Valid Cert",
+      "title": "UpSvc",
       "type": "btplc-status-dot-panel"
     }
   ],
@@ -1132,7 +748,7 @@
     ]
   },
   "timezone": "",
-  "title": "Active Directory Details",
-  "uid": "zJtdqaHmk",
+  "title": "UPS Details",
+  "uid": "aX05OBHmz",
   "version": 2
 }

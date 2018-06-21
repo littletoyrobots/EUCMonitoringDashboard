@@ -780,7 +780,7 @@
               },
               {
                 "params": [
-                  "vPN Users"
+                  "VPN Users"
                 ],
                 "type": "alias"
               }
@@ -1105,7 +1105,14 @@
       },
       "id": 11,
       "interval": null,
-      "links": [],
+      "links": [
+        {
+          "dashUri": "db/app-v-details",
+          "dashboard": "APP-V Details",
+          "title": "APP-V Details",
+          "type": "dashboard"
+        }
+      ],
       "mappingType": 2,
       "mappingTypes": [
         {
@@ -1226,7 +1233,14 @@
       },
       "id": 12,
       "interval": null,
-      "links": [],
+      "links": [
+        {
+          "dashUri": "db/cloud-connector-details",
+          "dashboard": "Cloud Connector Details",
+          "title": "Cloud Connector Details",
+          "type": "dashboard"
+        }
+      ],
       "mappingType": 2,
       "mappingTypes": [
         {
@@ -1347,7 +1361,14 @@
       },
       "id": 13,
       "interval": null,
-      "links": [],
+      "links": [
+        {
+          "dashUri": "db/director-details",
+          "dashboard": "Director Details",
+          "title": "Director Details",
+          "type": "dashboard"
+        }
+      ],
       "mappingType": 2,
       "mappingTypes": [
         {
@@ -1468,7 +1489,14 @@
       },
       "id": 14,
       "interval": null,
-      "links": [],
+      "links": [
+        {
+          "dashUri": "db/federation-authentication-service-details",
+          "dashboard": "Federation Authentication Service Details",
+          "title": "Federation Authentication Service Details",
+          "type": "dashboard"
+        }
+      ],
       "mappingType": 2,
       "mappingTypes": [
         {
@@ -1589,7 +1617,14 @@
       },
       "id": 15,
       "interval": null,
-      "links": [],
+      "links": [
+        {
+          "dashUri": "db/netscaler-details",
+          "dashboard": "Netscaler Details",
+          "title": "Netscaler Details",
+          "type": "dashboard"
+        }
+      ],
       "mappingType": 2,
       "mappingTypes": [
         {
@@ -1710,7 +1745,14 @@
       },
       "id": 16,
       "interval": null,
-      "links": [],
+      "links": [
+        {
+          "dashUri": "db/netscaler-gateway-details",
+          "dashboard": "Netscaler Gateway Details",
+          "title": "Netscaler Gateway Details",
+          "type": "dashboard"
+        }
+      ],
       "mappingType": 2,
       "mappingTypes": [
         {
@@ -1831,7 +1873,14 @@
       },
       "id": 17,
       "interval": null,
-      "links": [],
+      "links": [
+        {
+          "dashUri": "db/provisioning-details",
+          "dashboard": "Provisioning Details",
+          "title": "Provisioning Details",
+          "type": "dashboard"
+        }
+      ],
       "mappingType": 2,
       "mappingTypes": [
         {
@@ -1947,12 +1996,19 @@
       "gridPos": {
         "h": 2,
         "w": 3,
-        "x": 0,
+        "x": 3,
         "y": 15
       },
       "id": 18,
       "interval": null,
-      "links": [],
+      "links": [
+        {
+          "dashUri": "db/sql-details",
+          "dashboard": "SQL Details",
+          "title": "SQL Details",
+          "type": "dashboard"
+        }
+      ],
       "mappingType": 2,
       "mappingTypes": [
         {
@@ -2068,12 +2124,19 @@
       "gridPos": {
         "h": 2,
         "w": 3,
-        "x": 3,
+        "x": 6,
         "y": 15
       },
       "id": 19,
       "interval": null,
-      "links": [],
+      "links": [
+        {
+          "dashUri": "db/storefront-details",
+          "dashboard": "Storefront Details",
+          "title": "Storefront Details",
+          "type": "dashboard"
+        }
+      ],
       "mappingType": 2,
       "mappingTypes": [
         {
@@ -2189,12 +2252,19 @@
       "gridPos": {
         "h": 2,
         "w": 3,
-        "x": 6,
+        "x": 9,
         "y": 15
       },
       "id": 20,
       "interval": null,
-      "links": [],
+      "links": [
+        {
+          "dashUri": "db/ups-details",
+          "dashboard": "UPS Details",
+          "title": "UPS Details",
+          "type": "dashboard"
+        }
+      ],
       "mappingType": 2,
       "mappingTypes": [
         {
@@ -2310,12 +2380,19 @@
       "gridPos": {
         "h": 2,
         "w": 3,
-        "x": 9,
+        "x": 12,
         "y": 15
       },
       "id": 21,
       "interval": null,
-      "links": [],
+      "links": [
+        {
+          "dashUri": "db/wem-details",
+          "dashboard": "WEM Details",
+          "title": "WEM Details",
+          "type": "dashboard"
+        }
+      ],
       "mappingType": 2,
       "mappingTypes": [
         {
@@ -2369,7 +2446,7 @@
             },
             {
               "params": [
-                "null"
+                "previous"
               ],
               "type": "fill"
             }
@@ -2431,12 +2508,19 @@
       "gridPos": {
         "h": 2,
         "w": 3,
-        "x": 12,
+        "x": 15,
         "y": 15
       },
       "id": 22,
       "interval": null,
-      "links": [],
+      "links": [
+        {
+          "dashUri": "db/xd-controller-details",
+          "dashboard": "XD Controller Details",
+          "title": "XD Controller Details",
+          "type": "dashboard"
+        }
+      ],
       "mappingType": 2,
       "mappingTypes": [
         {
@@ -2552,12 +2636,19 @@
       "gridPos": {
         "h": 2,
         "w": 3,
-        "x": 15,
+        "x": 18,
         "y": 15
       },
       "id": 23,
       "interval": null,
-      "links": [],
+      "links": [
+        {
+          "dashUri": "db/xd-licensing-details",
+          "dashboard": "XD Licensing Details",
+          "title": "XD Licensing Details",
+          "type": "dashboard"
+        }
+      ],
       "mappingType": 2,
       "mappingTypes": [
         {
@@ -2691,5 +2782,5 @@
   "timezone": "",
   "title": "EUCMonitoring",
   "uid": "MDZmSxHiz",
-  "version": 7
+  "version": 23
 }
