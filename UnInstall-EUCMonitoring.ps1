@@ -1,7 +1,7 @@
 $InstallDir = "C:\Monitoring"
 
 #Removing Services
-$NSSM = (get-childitem $InstallDir | where {$_.Name -match 'nssm'}).FullName
+$NSSM = (get-childitem $InstallDir | Where-Object {$_.Name -match 'nssm'}).FullName
 $NSSMEXE = "$nssm\win64\nssm.exe"
 #Remove Grafana Service
 & $nssmexe Stop "Grafana Server"
