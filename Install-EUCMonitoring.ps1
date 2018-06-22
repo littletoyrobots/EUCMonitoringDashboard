@@ -43,7 +43,7 @@ param(
     [Parameter( Mandatory = $true )] $EUCVersion
 )
 
-
+$DownloadLocation = (Get-Item Env:Temp).value #Use the Temp folder as Temp Download location
 $InitScript = "$(split-path $SCRIPT:MyInvocation.MyCommand.Path -parent)\Begin-EUCMonitor.ps1"
 
 #open FW for Grafana
