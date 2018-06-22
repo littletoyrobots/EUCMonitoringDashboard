@@ -1,6 +1,6 @@
 param (
     $InstallDir = "C:\Monitoring"
-}
+)
 
 #Removing Services
 $NSSM = (get-childitem $InstallDir | Where-Object {$_.Name -match 'nssm'}).FullName
