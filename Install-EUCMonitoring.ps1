@@ -166,7 +166,7 @@ Write-Verbose $Catch
 # Launch Notepad and let them edit the file.  
 # Later, when working, invoke New-EUCMonitoringConfig $InstallDir
 Copy-Item -Path $InitScript -Destination $InstallDir
-Copy-Item -Path $InstallDir\EUCMonitoring\Package\euc-monitoring.json.template -Destination $InstallDir\euc-monitoring.json.template
+Copy-Item -Path "$InstallDir\EUCMonitoring\Package\euc-monitoring.json.template" -Destination $InstallDir
 
 Write-Host "Copy your euc-monitoring.json file to $InstallDir and review configurations"
 Write-Host "or just edit $InstallDir\euc-monitoring.json.template and save as euc-monitoring.json"
