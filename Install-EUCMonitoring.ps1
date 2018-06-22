@@ -10,11 +10,12 @@
 	Open Firewall ports 3000 and 8086 locally on the server
 	configures InfluxDB and Grafana Services
 .NOTES
-    Current Version:        1.01
+    Current Version:        1.02
     Creation Date:          23/04/2018
         $InstallDir = "C:\Monitoring",
 .PARAMETER InstallDir
-    Literal path to install this EUCMonitoring suite. (Where to install everything to)
+    Literal path to install this EUCMonitoring suite. (Where to install everything to).  This 
+    defaults to C:\Monitoring
 .PARAMETER GrafanaVersion 
     URL or Literal Path to the current Grafana version zip file.
     https://s3-us-west-2.amazonaws.com/grafana-releases/release/grafana-5.1.3.windows-x64.zip
@@ -172,7 +173,7 @@ Copy-Item -Path $InitScript -Destination $InstallDir
 Copy-Item -Path "$InstallDir\EUCMonitoring\Package\euc-monitoring.json.template" -Destination $InstallDir
 
 Write-Host "Copy your euc-monitoring.json file to $InstallDir and review configurations"
-Write-Host "or just edit $InstallDir\euc-monitoring.json.template and save as euc-monitoring.json"
+Write-Host "or just edit $InstallDir\euc-monitoring.json.template and save as euc-monitoring.json`n"
 #& "C:\Windows\System32\notepad.exe" $InstallDir\euc-monitoring.json
 
 Write-Host "After configuring, run $InitScript under appropriate privs" 

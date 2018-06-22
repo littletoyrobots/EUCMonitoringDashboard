@@ -1,12 +1,14 @@
 # EUCMonitoringDashboard
 
+## How to Install for the first time. 
+
 1. Download EUCMonitoringDashboard.
 
 - Currently [HERE](https://github.com/littletoyrobots/EUCMonitoringDashboard)
 
 2. Download the latest copy of v2_beta (or in my case, v2_TestEngine), as a zip file.
 
-- Currently [HERE](https://github.com/littletoyrobots/EUCMonitoring/tree/v2_TestEngine)
+- Currently [HERE](https://github.com/dbretty/EUCMonitoring/tree/v2_beta)
 
 - You might need to Right click the zip file -> properties -> Unblock. 
 
@@ -35,4 +37,6 @@ C:\Monitoring\Begin-EUCMonitor.ps1
 7. Browse to ```https://localhost:8086/``` and login as admin/admin
 
 8. To uninstall, run .\Uninstall-EUCMonitoring 
+
+
 
