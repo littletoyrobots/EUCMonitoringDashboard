@@ -130,6 +130,9 @@ $content = [System.IO.File]::ReadAllText("$Influx\influxdb.conf").Replace("/var/
 # Install EUCMonitoring
 GetAndInstall "EUCMonitoring" $EUCVersion $InstallDir
 $DashboardConfig = "$InstallDir\EUCMonitoring\DashboardConfig"
+$EUCMonitor = (get-childitem $installDir | Where-Object {$_.Name -match 'EUCMonitoring'}).FullName
+
+Copy-Item -Path $EUCMonitor -Destination "$InstallDir\EUCMonitoring" -Recurse
 
 #Install NSSM
 GetAndInstall "NSSM" $NSSMVersion $InstallDir
@@ -153,9 +156,9 @@ write-host "Restarting Grafana Server"
 stop-service "Grafana Server"
 start-service "Grafana Server"
 
+start-sleep 5
 write-host "Setting up Grafana"
 SetupGrafana
-
 
 Set-Location "$(split-path $SCRIPT:MyInvocation.MyCommand.Path -parent)"
 
