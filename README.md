@@ -34,7 +34,7 @@ already.
 C:\Monitoring\Begin-EUCMonitor.ps1
 ```
 
-7. Browse to ```https://localhost:8086/``` and login as admin/admin
+7. Browse to ```https://localhost:3000/``` and login as admin/admin
 
 8. To uninstall, run .\Uninstall-EUCMonitoring 
 
